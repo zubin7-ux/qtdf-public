@@ -14,11 +14,10 @@ no installs, no network.
 
 ## Rules that will save your context window
 
-- **Never open, list, or grep files under `store/`** (if present) — it holds
-  thousands of small JSON data records. Query it through the CLI instead:
+- **Never open, list, or grep files under `store/` or any `store_*/`
+  directory** (created by the ingester/demos) — thousands of small JSON data
+  records, not code. Query through the CLI instead:
   `python3 -m qtdf.cli query store --count`, `... verify store`.
-- The same goes for `captures/`, `truth/`, and any `store_*/` directory:
-  machine-generated data, not code.
 - The human-readable spec is `SCHEMA.md`; the map of everything is
   `README.md`. Read those two before any source file.
 
@@ -28,7 +27,6 @@ no installs, no network.
   - `qtdf/vfridge/` — virtual fridge (truth + measurement emulator)
   - `qtdf/executive/` — test plans, adapters, run/replay
 - `tests/` — each suite runs standalone: `python3 tests/test_qtdf.py`
-- `phase2_demo.py`, `phase3_demo.py` — narrative demonstrations (see README)
 
 ## Common tasks
 

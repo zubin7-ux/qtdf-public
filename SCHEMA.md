@@ -107,7 +107,7 @@ human disposition without erasing the underlying data.
 {
   "generated_at": "2026-07-09T…Z",
   "tool": "openEMS", "tool_method": "FDTD (full-wave)",
-  "generator": "qtdf/seed_from_eng_rf_002.py",
+  "generator": "your_lab/ingest_rf_qualification.py",
   "qtdf_library_version": "0.1.0",
   "environment": { "python": "3.x", "platform": "…" },
   "supersedes": null,

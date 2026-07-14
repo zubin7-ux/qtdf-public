@@ -43,32 +43,38 @@ qtdf demo                   # screen a virtual lot, prove byte-identical
 ## Verify this repo
 
 ```bash
-bash verify.sh              # every test suite + store checks + demo, PASS/FAIL
+bash verify.sh              # every test suite + the demo, PASS/FAIL per step
 ```
 
-Or piecemeal:
+## Try it on real data (no fridge, no account)
 
 ```bash
-python3 tests/test_qtdf.py                # schema invariants
-python3 tests/test_executive.py           # plans, carriers, replay
-python3 phase2_demo.py                    # exact escape/overkill vs truth
-python3 phase3_demo.py                    # capture -> byte-identical replay
 python3 -m venv .venv && .venv/bin/pip install qiskit-ibm-runtime
 .venv/bin/python ingest_ibm_snapshots.py  # real-device fleet -> store/
 python3 fleet_report.py                   # yield stats over the fleet
+python3 calibrate_emulator.py             # fit the emulator to measured data
 ```
+
+## Adopting QTDF in your lab
+
+You do not need to replace your stack. Wherever your measurement code
+already produces numbers, add a few lines: build a record dict per the
+schema, `qtdf.finalize(record)`, `Store.add(record)`. Your data is now
+standardized, hash-verified, and queryable — and a spec change re-grades
+history with zero fridge time. Going deeper, wrap your instrument control
+in one adapter class (`measure(slot, quantities)`) and the executive runs
+your versioned test plans and captures every run for byte-identical replay.
 
 ## Layout
 
 ```
 SCHEMA.md                 the human-readable spec (start here)
-verify.sh                 the one-command check
+verify.sh                 the one-command check (CI runs exactly this)
 qtdf/                     schema, validator, hashed store, CLI, demo
   vfridge/                virtual fridge (truth + measurement emulator)
   executive/              plans, adapters, backends, run/replay
-plans/                    versioned test plans (JSON)
-records/                  record #1: a real openEMS RF qualification
-captures/                 a replayable run capture (CI fixture)
+plans/                    an example versioned test plan (JSON)
+records/                  an example record: a real RF launch qualification
 tests/                    every suite runs standalone
 ```
 
