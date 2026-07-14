@@ -169,15 +169,18 @@ July 2026 on a non-macOS OS and non-3.14 Python (details to be recorded).
 
 qtdf.learn (July 2026, commercial layer) — the first genuinely machine-learned
 component: logistic score models trained in the vfridge gym (held-out AUC
-~0.97/0.98) plus decision thresholds fitted directly in dollars (multi-start
-coordinate descent on exact training cost). Benchmarked through the same
-executive path as every hand-written policy on 10 held-out lots x 2 economics
-scenarios: at module-grade economics (escape $50k) it saves 26% vs the best
-hand-written policy — by discovering that NO ship rule clears the escape bar
-at 2-cooldown discrimination (ship-nothing is optimal; the model tells you
-when not to ship). At lab-grade economics it ties the best hand policy within
-0.2% with half the escapes. Same models, different operating points — the
-thresholds re-derive from the customer's cost structure in seconds.
+0.97/0.98/0.99 for rounds 1/2/3) plus decision thresholds fitted directly in
+dollars (multi-start coordinate descent on exact training cost). Benchmarked
+through the same executive path as every hand-written policy, plus a 100-lot
+(9,427-die) scale audit. Findings at module-grade economics (escape $50k):
+2-cooldown discrimination cannot clear the escape bar — no ship rule is
+profitable and ship-nothing beats every shipper by 26%; a 3rd confirming
+cooldown DOES unlock shipping, but only for the ~0.2% of dies the margin-
+aware model isolates (learned-3r: 15 ships, 0 escapes, beats ship-nothing) —
+binary confirm-3x ships 5.4% poison at scale and its small-sample wins are
+luck. At lab-grade economics ($8k) the learned policy ties the best hand
+policy within 0.4% with half the escapes. Same models, different operating
+points: thresholds re-derive from the customer's cost structure in seconds.
 
 Deferred: JSON Schema export for other languages (first non-Python partner).
 
