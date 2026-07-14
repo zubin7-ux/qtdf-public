@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+# regenerable demo stores (phase demos recreate them)
+store_emu/
+store_exec/
+store_replay/
+store_pol/
+store_yield/

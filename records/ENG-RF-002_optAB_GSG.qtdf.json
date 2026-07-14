@@ -1,0 +1,174 @@
+{
+ "qtdf_version": "0.1.0",
+ "record_id": "urn:uuid:4c2055de-847f-4e84-a8ac-8abe6d988f32",
+ "record_type": "rf_launch_qualification",
+ "data_source": "simulation",
+ "device": {
+  "device_id": "CPN-100:optAB:GSG",
+  "part_number": "CPN-100",
+  "description": "pogo blind-mate coupon assembly, optAB launch, GSG ground config",
+  "revision": "optAB",
+  "genealogy": {
+   "assembly": "CAS-400 cassette",
+   "release": "ENG-REL-002"
+  }
+ },
+ "carrier": {
+  "provider": "cassette",
+  "carrier_part": "CAS-400",
+  "socket": null,
+  "rf_environment_qualified": true,
+  "note": "modeled fenced unit cell (ENG-REL-002 section 1.5); single socket"
+ },
+ "fixture": {
+  "fridge_id": null,
+  "temperature_K": null,
+  "note": "full-wave EM model (openEMS FDTD); temperature-independent",
+  "ports": 2,
+  "launch": "GSG pogo blind-mate",
+  "port_reference_impedance_ohm": 50.0
+ },
+ "test": {
+  "test_plan": "ENG-RF-002 RF launch confirmation and tuning",
+  "executive": "ENG-RF-002_openems_pogo.py",
+  "executive_version": null,
+  "band_GHz": [
+   2.0,
+   12.0
+  ],
+  "operator": "ENG",
+  "reproduce": "python ENG-RF-002_openems_pogo.py --case optAB --grounds GSG --exposed 0.20"
+ },
+ "calibration": {
+  "reference_impedance_ohm": 50.0,
+  "port_type": "coaxial TEM, de-embedded",
+  "extracted_impedance_ohm": 57.0,
+  "cal_error_dB": 1.0,
+  "loopback_standards": [
+   "ENG-RF-001_GSG.s2p",
+   "ENG-RF-001_GS.s2p",
+   "ENG-RF-001_5-gnd.s2p"
+  ],
+  "note": "coax port extracts 57 ohm vs 50 target -> treat results as +/-1 dB"
+ },
+ "measurements": [
+  {
+   "quantity": "return_loss",
+   "symbol": "|S11|",
+   "value": -18.62,
+   "unit": "dB",
+   "conditions": {
+    "frequency_GHz": 8.0,
+    "gap_mm": 1.8
+   },
+   "limit": {
+    "op": "<=",
+    "value": -15.0
+   },
+   "pass": true,
+   "margin_dB": 3.62
+  },
+  {
+   "quantity": "insertion_loss",
+   "symbol": "|S21|",
+   "value": 1.19,
+   "unit": "dB",
+   "conditions": {
+    "frequency_GHz": 8.0,
+    "gap_mm": 1.8
+   },
+   "limit": null,
+   "pass": null,
+   "note": "informational; >0 dB is the ~1 dB port-cal artifact"
+  },
+  {
+   "quantity": "matched_bands",
+   "symbol": "RL<=15 dB lobes",
+   "value": [
+    [
+     5.653,
+     6.724
+    ],
+    [
+     7.518,
+     8.37
+    ]
+   ],
+   "unit": "GHz",
+   "conditions": {
+    "threshold_dB": -15.0
+   },
+   "limit": null,
+   "pass": null,
+   "note": "double-humped launch: two matched lobes with a gap (~-13 dB) between them; 8 GHz operating point sits in the upper lobe. ENG-RF-002 report's single 5.65-8.37 GHz span hides this gap."
+  }
+ ],
+ "traces": [
+  {
+   "name": "ENG-RF-002_optAB_GSG.s2p",
+   "role": "s_parameters",
+   "format": "touchstone_ri",
+   "ports": 2,
+   "points": 601,
+   "path": "ENG-RF-002_optAB_GSG.s2p",
+   "sha256": "sha256:e97603d33d574e93ae0ddb70fb311ac57f6a22a27bb0ff37f2a8f931b0863647"
+  }
+ ],
+ "disposition": {
+  "verdict": "pass",
+  "bin": 1,
+  "override": false,
+  "reason": null,
+  "rules": [
+   {
+    "rule_id": "RL15@8GHz",
+    "quantity": "return_loss",
+    "limit": {
+     "op": "<=",
+     "value": -15.0
+    },
+    "result": "pass"
+   }
+  ],
+  "reference": "-15 dB return loss at the 8 GHz operating band",
+  "note": "verdict scoped to 8 GHz operating band, not the literal 0.1-12 GHz sweep"
+ },
+ "annotations": {
+  "caveats": [
+   "coax port Z_ref=57 ohm -> +/-1 dB calibration uncertainty",
+   "perimeter ground fence is load-bearing; without it the cell resonates in-band",
+   "low-frequency (<~2 GHz) is pulsed-FDTD excitation-limited, not physical"
+  ],
+  "stroke_robustness": {
+   "quantity": "return_loss",
+   "unit": "dB",
+   "note": "|S11| @ 8 GHz holds across mate stroke (separate runs)",
+   "points": [
+    {
+     "gap_mm": 1.35,
+     "S11_dB": -18.0
+    },
+    {
+     "gap_mm": 1.8,
+     "S11_dB": -18.62
+    },
+    {
+     "gap_mm": 2.25,
+     "S11_dB": -17.9
+    }
+   ]
+  }
+ },
+ "provenance": {
+  "generated_at": "2026-07-09T21:01:10Z",
+  "tool": "openEMS",
+  "tool_method": "FDTD (full-wave)",
+  "generator": "qtdf/seed_from_eng_rf_002.py",
+  "qtdf_library_version": "0.1.0",
+  "environment": {
+   "python": "3.14.6",
+   "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "content_hash": "sha256:95fd6b76c69f0037d5bc4cf10253ddd1dd1371c569f3d039832f3086037a17f7"
+ }
+}

@@ -1,0 +1,2207 @@
+{
+ "run_id": "exec:LOT-EMU-26H:W01:load01",
+ "cooldown_id": "cd01",
+ "generated_at": "2026-07-10T10:51:06Z",
+ "operator": "EXEC",
+ "plan": {
+  "plan_id": "coherence-screen-v1",
+  "plan_version": "1.0.0",
+  "record_type": "qubit_coherence_screen",
+  "description": "MCM-grade known-good-die coherence screen",
+  "quantities": [
+   {
+    "quantity": "T1",
+    "symbol": "T1",
+    "unit": "us",
+    "limit": {
+     "op": ">=",
+     "value": 150.0
+    }
+   },
+   {
+    "quantity": "T2",
+    "symbol": "T2",
+    "unit": "us"
+   },
+   {
+    "quantity": "f_01",
+    "symbol": "f01",
+    "unit": "GHz"
+   },
+   {
+    "quantity": "readout_error",
+    "symbol": "eps_ro",
+    "unit": "1",
+    "limit": {
+     "op": "<=",
+     "value": 0.02
+    }
+   }
+  ],
+  "disposition": {
+   "spec_id": "MCM-GRADE-v0",
+   "response_quantity": "T1",
+   "pass_bin": 1,
+   "default_fail_bin": 9,
+   "bin_map": [
+    {
+     "bin": 2,
+     "when_failed": [
+      "T1"
+     ]
+    },
+    {
+     "bin": 3,
+     "when_failed": [
+      "readout_error"
+     ]
+    },
+    {
+     "bin": 4,
+     "when_failed": [
+      "T1",
+      "readout_error"
+     ]
+    },
+    {
+     "bin": 5,
+     "nonfunctional": true
+    }
+   ]
+  }
+ },
+ "plan_hash": "sha256:788a9b7ff8b3c83ecb44db4d9500803c49dd696c0c0bb172773bdf4975523399",
+ "data_source": "emulated",
+ "backend_tool": "vfridge",
+ "backend_method": "emulated cooldown measurement",
+ "fridge": {
+  "fridge_id": "VF-1",
+  "temperature_K": 0.012,
+  "note": "virtual dilution refrigerator"
+ },
+ "carrier": {
+  "provider": "cassette",
+  "carrier_part": "CAS-400",
+  "rf_environment_qualified": true,
+  "loopback_standards": [
+   "ENG-RF-001_GSG.s2p"
+  ]
+ },
+ "slots": [
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-00:Q0",
+   "socket": "S01",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D00-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-00:Q1",
+   "socket": "S01",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D00-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-00:Q2",
+   "socket": "S01",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D00-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-00:Q3",
+   "socket": "S01",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D00-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-00:Q0",
+   "socket": "S02",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D01-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-00:Q1",
+   "socket": "S02",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D01-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-00:Q2",
+   "socket": "S02",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D01-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-00:Q3",
+   "socket": "S02",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D01-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-00:Q0",
+   "socket": "S03",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D02-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-00:Q1",
+   "socket": "S03",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D02-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-00:Q2",
+   "socket": "S03",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D02-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-00:Q3",
+   "socket": "S03",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D02-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-00:Q0",
+   "socket": "S04",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D03-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-00:Q1",
+   "socket": "S04",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D03-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-00:Q2",
+   "socket": "S04",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D03-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-00:Q3",
+   "socket": "S04",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D03-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-00:Q0",
+   "socket": "S05",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D04-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-00:Q1",
+   "socket": "S05",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D04-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-00:Q2",
+   "socket": "S05",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D04-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-00:Q3",
+   "socket": "S05",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D04-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-00:Q0",
+   "socket": "S06",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D05-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-00:Q1",
+   "socket": "S06",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D05-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-00:Q2",
+   "socket": "S06",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D05-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-00:Q3",
+   "socket": "S06",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D05-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-00:Q0",
+   "socket": "S07",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D06-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-00:Q1",
+   "socket": "S07",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D06-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-00:Q2",
+   "socket": "S07",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D06-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-00:Q3",
+   "socket": "S07",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D06-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-00:Q0",
+   "socket": "S08",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D07-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-00:Q1",
+   "socket": "S08",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D07-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-00:Q2",
+   "socket": "S08",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D07-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-00:Q3",
+   "socket": "S08",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D07-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-00:Q0",
+   "socket": "S09",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D08-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-00:Q1",
+   "socket": "S09",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D08-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-00:Q2",
+   "socket": "S09",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D08-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-00:Q3",
+   "socket": "S09",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D08-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-00:Q0",
+   "socket": "S10",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D09-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-00:Q1",
+   "socket": "S10",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D09-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-00:Q2",
+   "socket": "S10",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D09-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-00:Q3",
+   "socket": "S10",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D09-00",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 0
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-00"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-01:Q0",
+   "socket": "S11",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D00-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-01:Q1",
+   "socket": "S11",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D00-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-01:Q2",
+   "socket": "S11",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D00-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-01:Q3",
+   "socket": "S11",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D00-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-01:Q0",
+   "socket": "S12",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D01-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-01:Q1",
+   "socket": "S12",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D01-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-01:Q2",
+   "socket": "S12",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D01-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-01:Q3",
+   "socket": "S12",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D01-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-01:Q0",
+   "socket": "S13",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D02-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-01:Q1",
+   "socket": "S13",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D02-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-01:Q2",
+   "socket": "S13",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D02-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-01:Q3",
+   "socket": "S13",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D02-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-01:Q0",
+   "socket": "S14",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D03-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-01:Q1",
+   "socket": "S14",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D03-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-01:Q2",
+   "socket": "S14",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D03-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-01:Q3",
+   "socket": "S14",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D03-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-01:Q0",
+   "socket": "S15",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D04-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-01:Q1",
+   "socket": "S15",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D04-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-01:Q2",
+   "socket": "S15",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D04-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D04-01:Q3",
+   "socket": "S15",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D04-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 4,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D04-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-01:Q0",
+   "socket": "S16",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D05-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-01:Q1",
+   "socket": "S16",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D05-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-01:Q2",
+   "socket": "S16",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D05-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D05-01:Q3",
+   "socket": "S16",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D05-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 5,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D05-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-01:Q0",
+   "socket": "S17",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D06-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-01:Q1",
+   "socket": "S17",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D06-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-01:Q2",
+   "socket": "S17",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D06-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D06-01:Q3",
+   "socket": "S17",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D06-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 6,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D06-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-01:Q0",
+   "socket": "S18",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D07-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-01:Q1",
+   "socket": "S18",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D07-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-01:Q2",
+   "socket": "S18",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D07-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D07-01:Q3",
+   "socket": "S18",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D07-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 7,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D07-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-01:Q0",
+   "socket": "S19",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D08-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-01:Q1",
+   "socket": "S19",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D08-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-01:Q2",
+   "socket": "S19",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D08-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D08-01:Q3",
+   "socket": "S19",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D08-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 8,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D08-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-01:Q0",
+   "socket": "S20",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D09-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-01:Q1",
+   "socket": "S20",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D09-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-01:Q2",
+   "socket": "S20",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D09-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D09-01:Q3",
+   "socket": "S20",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D09-01",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 9,
+    "die_y": 1
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D09-01"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-02:Q0",
+   "socket": "S21",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D00-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-02:Q1",
+   "socket": "S21",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D00-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-02:Q2",
+   "socket": "S21",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D00-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D00-02:Q3",
+   "socket": "S21",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D00-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 0,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D00-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-02:Q0",
+   "socket": "S22",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D01-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-02:Q1",
+   "socket": "S22",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D01-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-02:Q2",
+   "socket": "S22",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D01-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D01-02:Q3",
+   "socket": "S22",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D01-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 1,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D01-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-02:Q0",
+   "socket": "S23",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D02-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-02:Q1",
+   "socket": "S23",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D02-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-02:Q2",
+   "socket": "S23",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D02-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D02-02:Q3",
+   "socket": "S23",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D02-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 2,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D02-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-02:Q0",
+   "socket": "S24",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 0 on die LOT-EMU-26H:W01:D03-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-02:Q1",
+   "socket": "S24",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 1 on die LOT-EMU-26H:W01:D03-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-02:Q2",
+   "socket": "S24",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 2 on die LOT-EMU-26H:W01:D03-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-02"
+   }
+  },
+  {
+   "device_id": "LOT-EMU-26H:W01:D03-02:Q3",
+   "socket": "S24",
+   "part_number": "EMU-TRANSMON-4Q",
+   "description": "virtual transmon 3 on die LOT-EMU-26H:W01:D03-02",
+   "wafer": {
+    "lot_id": "LOT-EMU-26H",
+    "wafer_id": "W01",
+    "die_x": 3,
+    "die_y": 2
+   },
+   "genealogy": {
+    "vendor": "vfridge",
+    "chip": "LOT-EMU-26H:W01:D03-02"
+   }
+  }
+ ],
+ "results": {
+  "LOT-EMU-26H:W01:D00-00:Q0": {
+   "T1": 179.06,
+   "T2": 216.44,
+   "f_01": 4.534559,
+   "readout_error": 0.01
+  },
+  "LOT-EMU-26H:W01:D00-00:Q1": {
+   "T1": 257.17,
+   "T2": 257.58,
+   "f_01": 4.695991,
+   "readout_error": 0.09
+  },
+  "LOT-EMU-26H:W01:D00-00:Q2": {
+   "T1": 312.44,
+   "T2": 192.16,
+   "f_01": 4.81888,
+   "readout_error": 0.052
+  },
+  "LOT-EMU-26H:W01:D00-00:Q3": {
+   "T1": 327.41,
+   "T2": 228.06,
+   "f_01": 4.939096,
+   "readout_error": 0.0175
+  },
+  "LOT-EMU-26H:W01:D01-00:Q0": {
+   "T1": 180.05,
+   "T2": 175.05,
+   "f_01": 4.597733,
+   "readout_error": 0.006
+  },
+  "LOT-EMU-26H:W01:D01-00:Q1": {
+   "T1": 168.8,
+   "T2": 113.2,
+   "f_01": 4.652367,
+   "readout_error": 0.0035
+  },
+  "LOT-EMU-26H:W01:D01-00:Q2": {
+   "T1": 148.07,
+   "T2": 82.71,
+   "f_01": 4.818351,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D01-00:Q3": {
+   "T1": 245.04,
+   "T2": 431.84,
+   "f_01": 4.969785,
+   "readout_error": 0.0715
+  },
+  "LOT-EMU-26H:W01:D02-00:Q0": {
+   "T1": 249.37,
+   "T2": 84.76,
+   "f_01": 4.525967,
+   "readout_error": 0.015
+  },
+  "LOT-EMU-26H:W01:D02-00:Q1": {
+   "T1": 185.77,
+   "T2": 62.3,
+   "f_01": 4.721944,
+   "readout_error": 0.069
+  },
+  "LOT-EMU-26H:W01:D02-00:Q2": {
+   "T1": 52.41,
+   "T2": 100.42,
+   "f_01": 4.826278,
+   "readout_error": 0.015
+  },
+  "LOT-EMU-26H:W01:D02-00:Q3": {
+   "T1": 23.86,
+   "T2": 43.04,
+   "f_01": 4.914092,
+   "readout_error": 0.047
+  },
+  "LOT-EMU-26H:W01:D03-00:Q0": {
+   "T1": 39.34,
+   "T2": 73.32,
+   "f_01": 4.634641,
+   "readout_error": 0.017
+  },
+  "LOT-EMU-26H:W01:D03-00:Q1": {
+   "T1": 208.96,
+   "T2": 58.09,
+   "f_01": 4.696201,
+   "readout_error": 0.0175
+  },
+  "LOT-EMU-26H:W01:D03-00:Q2": {
+   "T1": null,
+   "T2": null,
+   "f_01": null,
+   "readout_error": null
+  },
+  "LOT-EMU-26H:W01:D03-00:Q3": {
+   "T1": 128.01,
+   "T2": 117.0,
+   "f_01": 4.945348,
+   "readout_error": 0.021
+  },
+  "LOT-EMU-26H:W01:D04-00:Q0": {
+   "T1": 307.28,
+   "T2": 352.49,
+   "f_01": 4.612112,
+   "readout_error": 0.0175
+  },
+  "LOT-EMU-26H:W01:D04-00:Q1": {
+   "T1": 411.57,
+   "T2": 260.92,
+   "f_01": 4.739966,
+   "readout_error": 0.0125
+  },
+  "LOT-EMU-26H:W01:D04-00:Q2": {
+   "T1": 246.27,
+   "T2": 103.67,
+   "f_01": 4.853701,
+   "readout_error": 0.0315
+  },
+  "LOT-EMU-26H:W01:D04-00:Q3": {
+   "T1": 509.98,
+   "T2": 113.23,
+   "f_01": 5.0057,
+   "readout_error": 0.0005
+  },
+  "LOT-EMU-26H:W01:D05-00:Q0": {
+   "T1": 315.21,
+   "T2": 202.49,
+   "f_01": 4.571713,
+   "readout_error": 0.014
+  },
+  "LOT-EMU-26H:W01:D05-00:Q1": {
+   "T1": 210.23,
+   "T2": 61.68,
+   "f_01": 4.729657,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D05-00:Q2": {
+   "T1": 119.42,
+   "T2": 192.99,
+   "f_01": 4.833945,
+   "readout_error": 0.006
+  },
+  "LOT-EMU-26H:W01:D05-00:Q3": {
+   "T1": 244.4,
+   "T2": 143.26,
+   "f_01": 4.972615,
+   "readout_error": 0.008
+  },
+  "LOT-EMU-26H:W01:D06-00:Q0": {
+   "T1": 255.33,
+   "T2": 125.23,
+   "f_01": 4.582515,
+   "readout_error": 0.094
+  },
+  "LOT-EMU-26H:W01:D06-00:Q1": {
+   "T1": 348.47,
+   "T2": 129.41,
+   "f_01": 4.663335,
+   "readout_error": 0.02
+  },
+  "LOT-EMU-26H:W01:D06-00:Q2": {
+   "T1": 596.3,
+   "T2": 549.24,
+   "f_01": 4.817828,
+   "readout_error": 0.022
+  },
+  "LOT-EMU-26H:W01:D06-00:Q3": {
+   "T1": 289.45,
+   "T2": 135.46,
+   "f_01": 4.976626,
+   "readout_error": 0.0085
+  },
+  "LOT-EMU-26H:W01:D07-00:Q0": {
+   "T1": 179.63,
+   "T2": 86.48,
+   "f_01": 4.585432,
+   "readout_error": 0.022
+  },
+  "LOT-EMU-26H:W01:D07-00:Q1": {
+   "T1": 264.75,
+   "T2": 120.46,
+   "f_01": 4.702908,
+   "readout_error": 0.01
+  },
+  "LOT-EMU-26H:W01:D07-00:Q2": {
+   "T1": 87.2,
+   "T2": 174.69,
+   "f_01": 4.83267,
+   "readout_error": 0.0085
+  },
+  "LOT-EMU-26H:W01:D07-00:Q3": {
+   "T1": 209.12,
+   "T2": 325.08,
+   "f_01": 4.973359,
+   "readout_error": 0.003
+  },
+  "LOT-EMU-26H:W01:D08-00:Q0": {
+   "T1": 273.1,
+   "T2": 185.22,
+   "f_01": 4.568423,
+   "readout_error": 0.0075
+  },
+  "LOT-EMU-26H:W01:D08-00:Q1": {
+   "T1": 242.16,
+   "T2": 33.51,
+   "f_01": 4.747439,
+   "readout_error": 0.0285
+  },
+  "LOT-EMU-26H:W01:D08-00:Q2": {
+   "T1": 142.9,
+   "T2": 155.21,
+   "f_01": 4.81913,
+   "readout_error": 0.055
+  },
+  "LOT-EMU-26H:W01:D08-00:Q3": {
+   "T1": 301.61,
+   "T2": 217.38,
+   "f_01": 4.97102,
+   "readout_error": 0.005
+  },
+  "LOT-EMU-26H:W01:D09-00:Q0": {
+   "T1": 193.12,
+   "T2": 106.54,
+   "f_01": 4.59633,
+   "readout_error": 0.045
+  },
+  "LOT-EMU-26H:W01:D09-00:Q1": {
+   "T1": 224.47,
+   "T2": 48.25,
+   "f_01": 4.733948,
+   "readout_error": 0.064
+  },
+  "LOT-EMU-26H:W01:D09-00:Q2": {
+   "T1": 242.74,
+   "T2": 127.48,
+   "f_01": 4.826926,
+   "readout_error": 0.008
+  },
+  "LOT-EMU-26H:W01:D09-00:Q3": {
+   "T1": 355.01,
+   "T2": 144.71,
+   "f_01": 4.966113,
+   "readout_error": 0.003
+  },
+  "LOT-EMU-26H:W01:D00-01:Q0": {
+   "T1": 209.8,
+   "T2": 150.1,
+   "f_01": 4.555532,
+   "readout_error": 0.0145
+  },
+  "LOT-EMU-26H:W01:D00-01:Q1": {
+   "T1": 344.44,
+   "T2": 407.83,
+   "f_01": 4.660718,
+   "readout_error": 0.002
+  },
+  "LOT-EMU-26H:W01:D00-01:Q2": {
+   "T1": 246.38,
+   "T2": 199.33,
+   "f_01": 4.822575,
+   "readout_error": 0.0175
+  },
+  "LOT-EMU-26H:W01:D00-01:Q3": {
+   "T1": 170.55,
+   "T2": 62.94,
+   "f_01": 4.948355,
+   "readout_error": 0.022
+  },
+  "LOT-EMU-26H:W01:D01-01:Q0": {
+   "T1": 259.83,
+   "T2": 234.82,
+   "f_01": 4.565472,
+   "readout_error": 0.0145
+  },
+  "LOT-EMU-26H:W01:D01-01:Q1": {
+   "T1": 208.12,
+   "T2": 321.4,
+   "f_01": 4.661054,
+   "readout_error": 0.011
+  },
+  "LOT-EMU-26H:W01:D01-01:Q2": {
+   "T1": 261.78,
+   "T2": 224.6,
+   "f_01": 4.832466,
+   "readout_error": 0.01
+  },
+  "LOT-EMU-26H:W01:D01-01:Q3": {
+   "T1": 545.39,
+   "T2": 185.05,
+   "f_01": 5.017105,
+   "readout_error": 0.085
+  },
+  "LOT-EMU-26H:W01:D02-01:Q0": {
+   "T1": 157.88,
+   "T2": 203.65,
+   "f_01": 4.595403,
+   "readout_error": 0.005
+  },
+  "LOT-EMU-26H:W01:D02-01:Q1": {
+   "T1": 297.29,
+   "T2": 243.83,
+   "f_01": 4.713727,
+   "readout_error": 0.0105
+  },
+  "LOT-EMU-26H:W01:D02-01:Q2": {
+   "T1": 207.32,
+   "T2": 265.71,
+   "f_01": 4.81792,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D02-01:Q3": {
+   "T1": 346.37,
+   "T2": 212.1,
+   "f_01": 5.029988,
+   "readout_error": 0.002
+  },
+  "LOT-EMU-26H:W01:D03-01:Q0": {
+   "T1": 264.36,
+   "T2": 182.71,
+   "f_01": 4.584806,
+   "readout_error": 0.0025
+  },
+  "LOT-EMU-26H:W01:D03-01:Q1": {
+   "T1": 163.28,
+   "T2": 151.68,
+   "f_01": 4.688624,
+   "readout_error": 0.024
+  },
+  "LOT-EMU-26H:W01:D03-01:Q2": {
+   "T1": 148.19,
+   "T2": 239.18,
+   "f_01": 4.851943,
+   "readout_error": 0.026
+  },
+  "LOT-EMU-26H:W01:D03-01:Q3": {
+   "T1": null,
+   "T2": null,
+   "f_01": null,
+   "readout_error": null
+  },
+  "LOT-EMU-26H:W01:D04-01:Q0": {
+   "T1": 498.46,
+   "T2": 29.93,
+   "f_01": 4.626079,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D04-01:Q1": {
+   "T1": 172.07,
+   "T2": 91.9,
+   "f_01": 4.729806,
+   "readout_error": 0.0095
+  },
+  "LOT-EMU-26H:W01:D04-01:Q2": {
+   "T1": 285.22,
+   "T2": 194.11,
+   "f_01": 4.850667,
+   "readout_error": 0.0095
+  },
+  "LOT-EMU-26H:W01:D04-01:Q3": {
+   "T1": 227.83,
+   "T2": 307.1,
+   "f_01": 5.007737,
+   "readout_error": 0.025
+  },
+  "LOT-EMU-26H:W01:D05-01:Q0": {
+   "T1": 159.18,
+   "T2": 143.34,
+   "f_01": 4.593215,
+   "readout_error": 0.02
+  },
+  "LOT-EMU-26H:W01:D05-01:Q1": {
+   "T1": 192.4,
+   "T2": 168.58,
+   "f_01": 4.755828,
+   "readout_error": 0.034
+  },
+  "LOT-EMU-26H:W01:D05-01:Q2": {
+   "T1": 179.43,
+   "T2": 293.39,
+   "f_01": 4.853098,
+   "readout_error": 0.0115
+  },
+  "LOT-EMU-26H:W01:D05-01:Q3": {
+   "T1": 296.59,
+   "T2": 352.03,
+   "f_01": 5.003098,
+   "readout_error": 0.007
+  },
+  "LOT-EMU-26H:W01:D06-01:Q0": {
+   "T1": 259.07,
+   "T2": 46.36,
+   "f_01": 4.627883,
+   "readout_error": 0.014
+  },
+  "LOT-EMU-26H:W01:D06-01:Q1": {
+   "T1": 264.28,
+   "T2": 124.36,
+   "f_01": 4.691268,
+   "readout_error": 0.0025
+  },
+  "LOT-EMU-26H:W01:D06-01:Q2": {
+   "T1": 452.56,
+   "T2": 267.0,
+   "f_01": 4.850487,
+   "readout_error": 0.0135
+  },
+  "LOT-EMU-26H:W01:D06-01:Q3": {
+   "T1": 197.13,
+   "T2": 180.83,
+   "f_01": 5.023114,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D07-01:Q0": {
+   "T1": 176.84,
+   "T2": 117.83,
+   "f_01": 4.586351,
+   "readout_error": 0.0065
+  },
+  "LOT-EMU-26H:W01:D07-01:Q1": {
+   "T1": 299.54,
+   "T2": 217.2,
+   "f_01": 4.716872,
+   "readout_error": 0.0665
+  },
+  "LOT-EMU-26H:W01:D07-01:Q2": {
+   "T1": 171.57,
+   "T2": 117.95,
+   "f_01": 4.8449,
+   "readout_error": 0.023
+  },
+  "LOT-EMU-26H:W01:D07-01:Q3": {
+   "T1": 237.54,
+   "T2": 189.42,
+   "f_01": 5.022929,
+   "readout_error": 0.013
+  },
+  "LOT-EMU-26H:W01:D08-01:Q0": {
+   "T1": 266.57,
+   "T2": 342.41,
+   "f_01": 4.563805,
+   "readout_error": 0.0015
+  },
+  "LOT-EMU-26H:W01:D08-01:Q1": {
+   "T1": 361.71,
+   "T2": 53.07,
+   "f_01": 4.710842,
+   "readout_error": 0.205
+  },
+  "LOT-EMU-26H:W01:D08-01:Q2": {
+   "T1": 268.75,
+   "T2": 125.67,
+   "f_01": 4.876953,
+   "readout_error": 0.2275
+  },
+  "LOT-EMU-26H:W01:D08-01:Q3": {
+   "T1": 109.18,
+   "T2": 120.57,
+   "f_01": 4.96565,
+   "readout_error": 0.019
+  },
+  "LOT-EMU-26H:W01:D09-01:Q0": {
+   "T1": 198.56,
+   "T2": 41.16,
+   "f_01": 4.560094,
+   "readout_error": 0.0075
+  },
+  "LOT-EMU-26H:W01:D09-01:Q1": {
+   "T1": 661.53,
+   "T2": 171.62,
+   "f_01": 4.750009,
+   "readout_error": 0.024
+  },
+  "LOT-EMU-26H:W01:D09-01:Q2": {
+   "T1": 57.52,
+   "T2": 72.12,
+   "f_01": 4.880902,
+   "readout_error": 0.0195
+  },
+  "LOT-EMU-26H:W01:D09-01:Q3": {
+   "T1": 265.27,
+   "T2": 110.71,
+   "f_01": 4.975125,
+   "readout_error": 0.004
+  },
+  "LOT-EMU-26H:W01:D00-02:Q0": {
+   "T1": 252.69,
+   "T2": 122.24,
+   "f_01": 4.569022,
+   "readout_error": 0.1165
+  },
+  "LOT-EMU-26H:W01:D00-02:Q1": {
+   "T1": 83.07,
+   "T2": 104.02,
+   "f_01": 4.728275,
+   "readout_error": 0.0145
+  },
+  "LOT-EMU-26H:W01:D00-02:Q2": {
+   "T1": 368.73,
+   "T2": 261.03,
+   "f_01": 4.781404,
+   "readout_error": 0.002
+  },
+  "LOT-EMU-26H:W01:D00-02:Q3": {
+   "T1": 413.94,
+   "T2": 422.19,
+   "f_01": 4.976276,
+   "readout_error": 0.011
+  },
+  "LOT-EMU-26H:W01:D01-02:Q0": {
+   "T1": 417.8,
+   "T2": 91.74,
+   "f_01": 4.563448,
+   "readout_error": 0.0085
+  },
+  "LOT-EMU-26H:W01:D01-02:Q1": {
+   "T1": 179.4,
+   "T2": 168.46,
+   "f_01": 4.749238,
+   "readout_error": 0.0345
+  },
+  "LOT-EMU-26H:W01:D01-02:Q2": {
+   "T1": 192.31,
+   "T2": 154.62,
+   "f_01": 4.866408,
+   "readout_error": 0.0225
+  },
+  "LOT-EMU-26H:W01:D01-02:Q3": {
+   "T1": 338.77,
+   "T2": 209.11,
+   "f_01": 4.979874,
+   "readout_error": 0.0075
+  },
+  "LOT-EMU-26H:W01:D02-02:Q0": {
+   "T1": 395.9,
+   "T2": 354.69,
+   "f_01": 4.583467,
+   "readout_error": 0.0115
+  },
+  "LOT-EMU-26H:W01:D02-02:Q1": {
+   "T1": 152.44,
+   "T2": 122.88,
+   "f_01": 4.705822,
+   "readout_error": 0.004
+  },
+  "LOT-EMU-26H:W01:D02-02:Q2": {
+   "T1": 492.95,
+   "T2": 89.12,
+   "f_01": 4.90252,
+   "readout_error": 0.007
+  },
+  "LOT-EMU-26H:W01:D02-02:Q3": {
+   "T1": 251.9,
+   "T2": 114.3,
+   "f_01": 4.96031,
+   "readout_error": 0.001
+  },
+  "LOT-EMU-26H:W01:D03-02:Q0": {
+   "T1": 221.23,
+   "T2": 137.96,
+   "f_01": 4.581274,
+   "readout_error": 0.032
+  },
+  "LOT-EMU-26H:W01:D03-02:Q1": {
+   "T1": 339.57,
+   "T2": 135.31,
+   "f_01": 4.736264,
+   "readout_error": 0.0115
+  },
+  "LOT-EMU-26H:W01:D03-02:Q2": {
+   "T1": 172.99,
+   "T2": 169.66,
+   "f_01": 4.818786,
+   "readout_error": 0.0415
+  },
+  "LOT-EMU-26H:W01:D03-02:Q3": {
+   "T1": 135.0,
+   "T2": 148.56,
+   "f_01": 5.041586,
+   "readout_error": 0.282
+  }
+ },
+ "capture_version": 1
+}

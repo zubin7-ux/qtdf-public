@@ -1,0 +1,11 @@
+qtdf — Quantum Test Data Format and known-good-qubit test stack
+Copyright 2026 Zubin Birnbach
+
+Licensed under the Apache License, Version 2.0.
+
+Measured-data provenance: records with data_source "measured" produced by
+ingest_ibm_snapshots.py derive from static calibration snapshots of IBM
+Quantum devices bundled with the qiskit-ibm-runtime package (Apache-2.0,
+(c) IBM). This repository ships the ingester, not the ingested data; run the
+ingester to regenerate the fleet locally. IBM device names appear factually
+as data provenance and imply no affiliation or endorsement.

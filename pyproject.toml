@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qtdf"
+version = "0.3.0"
+description = "Quantum Test Data Format and the known-good-qubit test stack: schema, hashed store, cross-fridge test executive, virtual fridge, CLI. Zero dependencies."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Zubin Birnbach", email = "zubin.birnbach@yale.edu" }]
+keywords = ["quantum", "qubit", "test-data", "known-good-die", "yield", "STDF", "cryogenic"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+# Zero runtime dependencies — the whole stack is stdlib-only by design.
+# (The IBM snapshot ingester needs qiskit-ibm-runtime; deliberately NOT a dep.)
+dependencies = []
+
+[project.scripts]
+qtdf = "qtdf.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["qtdf*"]
+
+# Package version (0.3.0) is decoupled from the QTDF SCHEMA version (0.2.0,
+# qtdf.QTDF_VERSION): the 0.2->0.3 package bump is the qtdf.* namespace
+# consolidation — imports changed, records did not.

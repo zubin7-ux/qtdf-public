@@ -1,0 +1,26 @@
+{
+  "plan_id": "coherence-screen-v1",
+  "plan_version": "1.0.0",
+  "record_type": "qubit_coherence_screen",
+  "description": "MCM-grade known-good-die coherence screen",
+  "quantities": [
+    {"quantity": "T1", "symbol": "T1", "unit": "us",
+     "limit": {"op": ">=", "value": 150.0}},
+    {"quantity": "T2", "symbol": "T2", "unit": "us"},
+    {"quantity": "f_01", "symbol": "f01", "unit": "GHz"},
+    {"quantity": "readout_error", "symbol": "eps_ro", "unit": "1",
+     "limit": {"op": "<=", "value": 0.02}}
+  ],
+  "disposition": {
+    "spec_id": "MCM-GRADE-v0",
+    "response_quantity": "T1",
+    "pass_bin": 1,
+    "default_fail_bin": 9,
+    "bin_map": [
+      {"bin": 2, "when_failed": ["T1"]},
+      {"bin": 3, "when_failed": ["readout_error"]},
+      {"bin": 4, "when_failed": ["T1", "readout_error"]},
+      {"bin": 5, "nonfunctional": true}
+    ]
+  }
+}

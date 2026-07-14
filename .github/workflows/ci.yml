@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: verify (tests + store + demo)
+        run: bash verify.sh
+      - name: packaged install + CLI
+        run: |
+          pip install .
+          cd "$RUNNER_TEMP"
+          qtdf version
+          qtdf demo --rows 5 --cols 5
