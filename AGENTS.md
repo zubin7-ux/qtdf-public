@@ -14,11 +14,11 @@ no installs, no network.
 
 ## Rules that will save your context window
 
-- **Never open, list, or grep files under `store/`** — it holds thousands
-  of small JSON data records (~16 MB). Query it through the CLI instead:
+- **Never open, list, or grep files under `store/`** (if present) — it holds
+  thousands of small JSON data records. Query it through the CLI instead:
   `python3 -m qtdf.cli query store --count`, `... verify store`.
-- The same goes for `captures/`, `truth/`, and any `store_*/` or `sim_*/`
-  directory: machine-generated data, not code.
+- The same goes for `captures/`, `truth/`, and any `store_*/` directory:
+  machine-generated data, not code.
 - The human-readable spec is `SCHEMA.md`; the map of everything is
   `README.md`. Read those two before any source file.
 
@@ -27,11 +27,8 @@ no installs, no network.
 - `qtdf/` — schema, validator, hashed store, CLI (`qtdf/cli.py`), demo
   - `qtdf/vfridge/` — virtual fridge (truth + measurement emulator)
   - `qtdf/executive/` — test plans, adapters, run/replay
-  - `qtdf/disposition/` — specs, screening policies, exact evaluation
-  - `qtdf/analytics/` — wafer maps, SPC, gauge R&R, MCM scorer
-  - `qtdf/learn/` — machine-learned screening policies (gym, models, thresholds)
-- `tests/` — 7 suites; each runs standalone: `python3 tests/test_qtdf.py`
-- `phase2..5_demo.py` — narrative demonstrations (see README)
+- `tests/` — each suite runs standalone: `python3 tests/test_qtdf.py`
+- `phase2_demo.py`, `phase3_demo.py` — narrative demonstrations (see README)
 
 ## Common tasks
 
