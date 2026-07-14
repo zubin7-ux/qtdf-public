@@ -182,6 +182,16 @@ luck. At lab-grade economics ($8k) the learned policy ties the best hand
 policy within 0.4% with half the escapes. Same models, different operating
 points: thresholds re-derive from the customer's cost structure in seconds.
 
+qtdf.learn.wafclass (July 2026, commercial layer) — AI piece #2: wafer-map
+defect classification (radial gradient / correlated cluster / spatially
+random / healthy) from die-level pass-fail maps via seven engineered spatial
+features (radial correlation, join-count, Moran autocorrelation, quadrant
+dispersion) + one-vs-rest logistics. Trained on 180 emulated wafers whose
+signature is true BY CONSTRUCTION (class-specific physics knobs, incl. the
+new stream-safe t1_radial_ln gradient); 96.7% held-out accuracy. Inference
+needs only a die map, so any QTDF store with device.wafer coordinates can be
+classified the day it arrives.
+
 Deferred: JSON Schema export for other languages (first non-Python partner).
 
 ## License

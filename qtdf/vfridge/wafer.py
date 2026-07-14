@@ -62,6 +62,8 @@ class EmuConfig:
     t1_median_us: float = 220.0
     t1_sigma_ln: float = 0.45         # total lognormal spread
     t1_corr_frac: float = 0.40        # fraction of variance that is wafer-correlated
+    t1_radial_ln: float = 0.0         # radial (center<->edge) ln-T1 gradient; sign
+                                      # random per wafer. 0.0 = off (default)
     # TLS bath
     tls_per_GHz_per_die: float = 0.8
     tls_width_MHz: float = 15.0
@@ -144,6 +146,9 @@ def generate_wafer(cfg: EmuConfig, wafer_no: int) -> WaferTruth:
     f_field = _smooth_field(rng)     # frequency-correlated component
     t1_field = _smooth_field(rng)    # T1-correlated component (e.g. substrate lot)
     radial_sign = rng.choice((-1.0, 1.0))
+    # draw ONLY when the knob is on: an unconditional draw would shift the
+    # rng stream and silently change every wafer generated at defaults
+    t1_radial_sign = rng.choice((-1.0, 1.0)) if cfg.t1_radial_ln else 0.0
 
     sig_corr = cfg.t1_sigma_ln * math.sqrt(cfg.t1_corr_frac)
     sig_iid = cfg.t1_sigma_ln * math.sqrt(1.0 - cfg.t1_corr_frac)
@@ -177,7 +182,8 @@ def generate_wafer(cfg: EmuConfig, wafer_no: int) -> WaferTruth:
                                + rng.gauss(0.0, cfg.f_iid_frac))
 
                 t1 = cfg.t1_median_us * math.exp(
-                    sig_corr * t1_field(u, v) + rng.gauss(0.0, sig_iid))
+                    sig_corr * t1_field(u, v) + rng.gauss(0.0, sig_iid)
+                    + cfg.t1_radial_ln * t1_radial_sign * (2.0 * r2 - 1.0))
                 # TLS suppression: Lorentzian in detuning
                 w = cfg.tls_width_MHz / 1000.0
                 supp = 1.0 + sum(
