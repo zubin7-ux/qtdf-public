@@ -29,6 +29,7 @@ no installs, no network.
   - `qtdf/executive/` — test plans, adapters, run/replay
   - `qtdf/disposition/` — specs, screening policies, exact evaluation
   - `qtdf/analytics/` — wafer maps, SPC, gauge R&R, MCM scorer
+  - `qtdf/learn/` — machine-learned screening policies (gym, models, thresholds)
 - `tests/` — 7 suites; each runs standalone: `python3 tests/test_qtdf.py`
 - `phase2..5_demo.py` — narrative demonstrations (see README)
 

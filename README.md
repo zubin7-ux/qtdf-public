@@ -38,6 +38,10 @@ qtdf/
       spc.py                # x-bar control charts, drift detection
       gauge.py              # gauge R&R across fridges (%GRR, culprit)
       mcm.py                # P(module ok | dies): margins MC + collision rule
+    learn/                  # machine-learned policies             [commercial layer]
+      models.py             # stdlib logistic/linear SGD, AUC, calibration
+      gym.py                # labeled episodes from vfridge (exhaustive, off-policy)
+      policy.py             # score models + dollar-optimal thresholds
   plans/                    # versioned test plans (JSON)
   captures/                 # replayable run captures (generated)
   seed_from_eng_rf_002.py   # ingest the real ENG-RF-002 s2p -> record #1
@@ -162,6 +166,18 @@ LICENSE + NOTICE (with IBM data provenance); `verify.sh` single-command
 verification; `AGENTS.md` so AI agents run instead of "architecting"; git +
 CI (Linux/macOS × Python 3.10–3.14). Independent reproduction: confirmed
 July 2026 on a non-macOS OS and non-3.14 Python (details to be recorded).
+
+qtdf.learn (July 2026, commercial layer) — the first genuinely machine-learned
+component: logistic score models trained in the vfridge gym (held-out AUC
+~0.97/0.98) plus decision thresholds fitted directly in dollars (multi-start
+coordinate descent on exact training cost). Benchmarked through the same
+executive path as every hand-written policy on 10 held-out lots x 2 economics
+scenarios: at module-grade economics (escape $50k) it saves 26% vs the best
+hand-written policy — by discovering that NO ship rule clears the escape bar
+at 2-cooldown discrimination (ship-nothing is optimal; the model tells you
+when not to ship). At lab-grade economics it ties the best hand policy within
+0.2% with half the escapes. Same models, different operating points — the
+thresholds re-derive from the customer's cost structure in seconds.
 
 Deferred: JSON Schema export for other languages (first non-Python partner).
 
